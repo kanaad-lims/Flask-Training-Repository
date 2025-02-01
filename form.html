@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is your Score Card</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('https://images4.alphacoders.com/751/751911.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+
+        .form {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #f0f0f0;
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        input {
+            padding: 20px;
+            width: 80%;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid #4b0082;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #8a2be2; /* Focus effect color */
+        }
+
+        button {
+            padding: 20px 35px;
+            background: linear-gradient(135deg, #8a2be2, #4b0082); /* Purple to Indigo */
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .note {
+            font-size: 16px;
+            color: #ccc;
+            margin-top: 20px;
+        }
+
+        /* Styling for the home redirect button */
+        .redirect-btn {
+            padding: 14px 35px;
+            background: linear-gradient(135deg, #ff6a00, #ffcc00); /* Warm gradient */
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .redirect-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="form">
+        <h1>Status and Average Score Calculation</h1>
+        <form action="{{ url_for('form') }}" method="post">
+            <input type="text" name="maths" placeholder="Maths" required="required" />
+            <input type="text" name="science" placeholder="Science" required="required" />
+            <input type="text" name="history" placeholder="History" required="required" />
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Calculate Result</button>
+        </form>
+
+        <form action="{{ url_for('home') }}" method="get">
+            <button type="submit" class="redirect-btn">Click to Redirect to Home Page</button>
+        </form>
+
+        <p class="note">After calculating the result, you can redirect back to the home page using the button above.</p>
+    </div>
+</body>
+</html>
