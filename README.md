@@ -1,2 +1,2 @@
 # Flask-Training-Repository
-Contains all the things associated with Flask python Framework.
+Contains Flask Python Web Framework things.
