@@ -76,6 +76,18 @@ def form():
         return redirect(url_for(res, score=average_score))
 
 
+#Creating a test API with 3 values as A, B and C.
+#Values are defined in JSON file names test.json.
+#API testing done via Postman.
+
+@app.route('/api', methods=["POST"])
+def calculateSum():
+    data = request.get_json()
+    a_val = float(dict(data)['a'])
+    b_val = float(dict(data)['b'])
+    c_val = float(dict(data)['c'])
+    return jsonify(a_val + b_val + c_val)
+
 
 if __name__ == "__main__":
     app.run(debug=True) #Do debug=True to keep running the flask server.
