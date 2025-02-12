@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify.
 
 ## Creating a simple Flask application.
 #Variable 'app' to denote the class flask, __ denotes the entry point in the program.
